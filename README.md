@@ -25,6 +25,6 @@ live on [link](https://blogassingment.netlify.app/)
    ```bash
    node app.js
    ```
-   Open your browser and navigate to http://localhost:3000 to view the application.
+   Open your browser and navigate to http://localhost:5000 to view the application.
 
 
