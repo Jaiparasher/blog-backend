@@ -25,9 +25,7 @@ const getPostById = asyncHandler(async (req, res) => {
 const createPost = asyncHandler(async (req, res) => {
     const { title, content } = req.body;
     const photoLocalPath = req.file?.path;
-    console.log(req);
     
-
     if (!photoLocalPath) res.status(404).json("Photo is required")
 
     const photo = await uploadOnCloudinary(photoLocalPath).catch((error) => console.log(error))
@@ -38,6 +36,9 @@ const createPost = asyncHandler(async (req, res) => {
         content,
         photo:photo.url
     });
+
+    console.log(post);
+    
 
     const createdPost = await post.save();
     res.status(201).json(createdPost);
